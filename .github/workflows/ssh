@@ -1,0 +1,19 @@
+name: Run Commands on Server
+
+on:
+    workflow_dispatch:
+
+jobs:
+  ssh-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run commands via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 85.122.120.240
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            ls
+            pwd
