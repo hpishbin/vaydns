@@ -16,4 +16,5 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             ls
+            ./dnstm-setup.sh --uninstall
             pwd
