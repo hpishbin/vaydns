@@ -20,5 +20,6 @@ jobs:
               ls -alh
               cat server.pub
               lsof -iUDP:5300 -t | xargs -r kill
-              ncat -l -k -v 127.0.0.1 8000 &
+              lsof -iUDP:8000 -t | xargs -r kill
+              ncat -l -k --proxy-type -v 127.0.0.1 8000 &
               ./vaydns-server-* -udp :5300 -privkey-file server.key -mtu 1000 -domain t.vivatel.ir -upstream 127.0.0.1:8000
