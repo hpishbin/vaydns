@@ -15,6 +15,12 @@ jobs:
       - name: Build
         run: |
           ls -alh
+          ip a
+          iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5300
           wget https://github.com/net2share/vaydns/releases/download/v0.2.7/vaydns-client-linux-amd64
+          chmod +x vaydns-client-linux-amd64
           ls -alh
+          ./vaydns-server -gen-key -privkey-file server.key -pubkey-file server.pub
+          curl ifconfig.co
+          
           pwd
