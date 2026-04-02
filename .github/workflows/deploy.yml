@@ -24,6 +24,7 @@ jobs:
           cat server.pub
           curl -4 ifconfig.me
           ./vaydns-server-* -help
+          apt install ncat -y
           ncat -l -k -v 127.0.0.1 8000
           ./vaydns-server-* -udp :5300 -privkey-file server.key -mtu 1000 -domain t.example.com -upstream 127.0.0.1:8000
 
