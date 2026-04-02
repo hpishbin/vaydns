@@ -22,6 +22,7 @@ jobs:
           ls -alh
           ./vaydns-server-linux-amd64 -gen-key -privkey-file server.key -pubkey-file server.pub
           cat server.pub
-          curl ifconfig.co
+          curl ipconfig.co
+          ./vaydns-server-* -udp :5300 -privkey-file server.key -mtu 1000 -domain t.example.com -upstream 127.0.0.1:8000
           
           pwd
