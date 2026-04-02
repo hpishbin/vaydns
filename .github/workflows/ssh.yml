@@ -17,5 +17,5 @@ jobs:
           script: |
             ls
             chmod +x dnstm-setup.sh
-            ./dnstm-setup.sh --uninstall
+            echo y | ./dnstm-setup.sh
             pwd
