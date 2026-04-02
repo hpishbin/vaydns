@@ -16,6 +16,3 @@ jobs:
         run: |
           ls
           pwd
-          //go build -trimpath -ldflags="-s -w" -o "vaydns-client-${{ matrix.goos }}-${ARCH}${SUFFIX}" ./vaydns-client
-          go build -trimpath -ldflags="-s -w" -o "vaydns-server-x" ./vaydns-server
-          chmod +x vaydns-client-* vaydns-server-*
