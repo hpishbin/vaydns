@@ -28,7 +28,7 @@ jobs:
           ./vaydns-server-* -help
           sudo apt install ncat certbot -y
           ncat -l -k -v 127.0.0.1 8000 &
-          sleep 60 & sudo certbot certonly --standalone -d testi.vivatel.ir --agree-tos --email your-email@example.com
+          sleep 60 & sudo certbot certonly --standalone -d testi.vivatel.ir --agree-tos --register-unsafely-without-email
           ./vaydns-server-* -udp :5300 -privkey-file server.key -mtu 1000 -domain t.vivatel.ir -upstream 127.0.0.1:8000
 
           
