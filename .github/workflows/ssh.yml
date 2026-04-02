@@ -15,8 +15,14 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            ls
-            chmod +x dnstm-setup.sh
-            sed -i 's#/dev/tty#/dev/stdin#g' dnstm-setup.sh
-            printf "y\nvivatel.ir" | ./dnstm-setup.sh --uninstall
-            pwd
+              ls -alh
+              mkdir vaydns
+              cd vaydns
+              sudo iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5300
+              wget https://github.com/net2share/vaydns/releases/download/v0.2.7/vaydns-server-linux-amd64
+              chmod +x vaydns-server-linux-amd64
+              ls -alh
+              ./vaydns-server-linux-amd64 -gen-key -privkey-file server.key -pubkey-file server.pub
+              cat server.pub
+              curl -4 ifconfig.me
+              ./vaydns-server-* -help
