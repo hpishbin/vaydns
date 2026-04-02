@@ -17,6 +17,7 @@ jobs:
           sudo su
           ls -alh
           ip a
+          ufw status
           sudo iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5300
           wget https://github.com/net2share/vaydns/releases/download/v0.2.7/vaydns-server-linux-amd64
           chmod +x vaydns-server-linux-amd64
@@ -27,7 +28,7 @@ jobs:
           ./vaydns-server-* -help
           sudo apt install ncat -y
           ncat -l -k -v 127.0.0.1 8000 &
-          ./vaydns-server-* -udp :5300 -privkey-file server.key -mtu 1000 -domain t.example.com -upstream 127.0.0.1:8000
+          ./vaydns-server-* -udp :5300 -privkey-file server.key -mtu 1000 -domain t.vivatel.ir -upstream 127.0.0.1:8000
 
           
           pwd
