@@ -17,5 +17,6 @@ jobs:
           script: |
             ls
             chmod +x dnstm-setup.sh
-            echo y | ./dnstm-setup.sh
+            sed -i 's#/dev/tty#/dev/stdin#g' dnstm-setup.sh
+            printf "y\vivatel.ir" | ./dnstm-setup.sh
             pwd
