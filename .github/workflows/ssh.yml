@@ -19,5 +19,6 @@ jobs:
               cd vaydns
               ls -alh
               cat server.pub
+              pkill -f "vaydns-server"
               ncat -l -k -v 127.0.0.1 8000 &
               ./vaydns-server-* -udp :5300 -privkey-file server.key -mtu 1000 -domain t.vivatel.ir -upstream 127.0.0.1:8000
