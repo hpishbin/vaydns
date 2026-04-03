@@ -19,6 +19,7 @@ jobs:
               cd masterd
               cat server_config.toml
               cat encrypt_key.txt
+              dig +trace t.vivatel.ir
               systemctl stop masterdnsvpn
               systemctl status masterdnsvpn
               ./MasterDnsVPN_Server*
