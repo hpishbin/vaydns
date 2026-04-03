@@ -1,4 +1,4 @@
-name: Run Commands on Server
+name: Masterd
 
 on:
     workflow_dispatch:
@@ -16,12 +16,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
               ls -alh
-              mkdir masterd
               cd masterd
-              curl -o server_linux_install.sh -Ls https://raw.githubusercontent.com/masterking32/MasterDnsVPN/main/server_linux_install.sh
-              chmod +x server_linux_install.sh
-              echo vivatel.ir | ./server_linux_install.sh
+              cat server_config.toml
               ls -alh
-              lsof -iUDP:5300
-              lsof -iUDP:5300 -t | xargs -r kill
               pwd
