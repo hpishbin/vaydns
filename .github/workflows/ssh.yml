@@ -23,5 +23,5 @@ jobs:
               lsof -iUDP:8000 -t | xargs -r kill
               ncat -l -k -v --proxy-type http 127.0.0.1 8000 &
               sleep 10 && curl --proxy http://127.0.0.1:8000 https://wtfismyip.com/text
-              ./vaydns-server-* -udp :5300 -privkey-file server.key -idle-timeout 22s -mtu 1280 -domain t.vivatel.ir -upstream 127.0.0.1:8000
+              ./vaydns-server-* -udp :5300 -privkey-file server.key -idle-timeout 22s -mtu 1000 -domain t.vivatel.ir -upstream 127.0.0.1:8000
               pwd
