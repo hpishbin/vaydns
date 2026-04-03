@@ -17,8 +17,8 @@ jobs:
           script: |
               ls -alh
               cd masterd
-              sed -i 's/DOMAIN = \[".*"\]/DOMAIN = ["t.vivatel.ir"]/g' server_config.toml
               cat server_config.toml
+              cat encrypt_key.txt
               systemctl restart masterdnsvpn
               systemctl status masterdnsvpn
               ls -alh
