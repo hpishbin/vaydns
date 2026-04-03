@@ -21,6 +21,7 @@ jobs:
               cat server.pub
               lsof -iUDP:5300
               lsof -iUDP:5300 -t | xargs -r kill
+              lsof -iUDP:53 -t | xargs -r kill
               lsof -iUDP:8000 -t | xargs -r kill
               ncat -l -k -v --proxy-type http 127.0.0.1 8000 &
               sleep 10 && curl --proxy http://127.0.0.1:8000 https://wtfismyip.com/text
