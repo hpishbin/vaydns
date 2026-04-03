@@ -1,0 +1,27 @@
+name: Run Commands on Server
+
+on:
+    workflow_dispatch:
+
+jobs:
+  ssh-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run commands via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 85.122.120.240
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+              ls -alh
+              mkdir masterd
+              cd masterd
+              curl -o server_linux_install.sh -Ls https://raw.githubusercontent.com/masterking32/MasterDnsVPN/main/server_linux_install.sh
+              chmod +x server_linux_install.sh
+              echo vivatel.ir | ./server_linux_install.sh
+              ls -alh
+              lsof -iUDP:5300
+              lsof -iUDP:5300 -t | xargs -r kill
+              pwd
