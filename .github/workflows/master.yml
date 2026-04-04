@@ -20,8 +20,9 @@ jobs:
               cat server_config.toml
               cat encrypt_key.txt
               dig +trace t.vivatel.ir
-              systemctl stop masterdnsvpn
+              systemctl restart masterdnsvpn
+              sleep 100
               systemctl status masterdnsvpn
-              ./MasterDnsVPN_Server*
+              # ./MasterDnsVPN_Server*
               ls -alh
               pwd
