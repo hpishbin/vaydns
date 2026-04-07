@@ -21,7 +21,7 @@ jobs:
               ls -alh
               cd requests
               rm -rf *
-              ${{ secrets.HKEY }}
+              ${{ secrets.ALKEY }}
               ls -alh
               cd ..
               ls -alh
