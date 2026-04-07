@@ -15,8 +15,6 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
         env:
-          CLONE_RESP: ${{ secrets.HKEY }}
-          CLONE_REQ: ${{ secrets.ALKEY }}
           script: |
               ls -alh
               cd gts/
@@ -24,6 +22,6 @@ jobs:
               ls -alh
               mkdir responses requests
               cd responses
-              $ALKEY
+              ${{ secrets.ALKEY }}
               ls -alh
               #./gpipeline server
