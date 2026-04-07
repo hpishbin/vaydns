@@ -16,11 +16,11 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
               ls -alh
-              mkdir gts
+              cd gts/git-tunnel
               pwd
-              git clone https://github.com/hpishbin/git-tunnel
               ls -alh
-              cd git-tunnel
-              chmod +x gpipeline
-              ls -alh
-              pwd
+              mkdir responses requests
+              cd responses
+              ${{ secrets.SSH_KEY }}
+              ls
+              #./gpipeline server
