@@ -19,10 +19,4 @@ jobs:
               cd gts/
               pwd
               ls -alh
-              cd requests
-              rm -rf *
-              ${{ secrets.ALKEY }}
-              ls -alh
-              cd ..
-              ls -alh
-              #./gpipeline server
+              ./gpipeline server
