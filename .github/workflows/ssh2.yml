@@ -17,7 +17,10 @@ jobs:
           script: |
               ls -alh
               cd gts/
+              cd requests/C
+              git config --global user.email "you@example.com"
+              git config --global user.name "Your Name"
+              cd ../..
               pwd
               ls -alh
-              chmod +x gpipeline
               ./gpipeline server
