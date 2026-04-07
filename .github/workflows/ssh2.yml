@@ -21,6 +21,13 @@ jobs:
               ls -alh
               mkdir responses requests
               cd responses
-              ${{ secrets.ALKEY }}
+              rm -rf *
+              ${{ secrets.HKEY }}
+              ls -alh
+              cd ..
+              cd requests
+              ${{ secrets.HKEY }}
+              ls -alh
+              cd ..
               ls -alh
               #./gpipeline server
