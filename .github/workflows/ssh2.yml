@@ -1,0 +1,26 @@
+name: 66
+
+on:
+    workflow_dispatch:
+
+jobs:
+  ssh-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run commands via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 66.135.23.133
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+              ls -alh
+              mkdir gts
+              pwd
+              git clone https://github.com/hpishbin/git-tunnel
+              ls -alh
+              cd git-tunnel
+              chmod +x gpipeline
+              ls -alh
+              pwd
