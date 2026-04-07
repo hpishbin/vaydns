@@ -19,13 +19,8 @@ jobs:
               cd gts/
               pwd
               ls -alh
-              mkdir responses requests
-              cd responses
-              rm -rf *
-              ${{ secrets.HKEY }}
-              ls -alh
-              cd ..
               cd requests
+              rm -rf *
               ${{ secrets.HKEY }}
               ls -alh
               cd ..
