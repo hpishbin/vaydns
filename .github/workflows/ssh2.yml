@@ -14,13 +14,16 @@ jobs:
           host: 66.135.23.133
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
+        env:
+          CLONE_RESP: ${{ secrets.HKEY }}
+          CLONE_REQ: ${{ secrets.ALKEY }}
           script: |
               ls -alh
-              cd gts/git-tunnel
+              cd gts/
               pwd
               ls -alh
               mkdir responses requests
               cd responses
-              ${{ secrets.SSH_KEY }}
-              ls
+              $ALKEY
+              ls -alh
               #./gpipeline server
