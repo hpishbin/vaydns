@@ -17,11 +17,13 @@ jobs:
           script: |
               ls -alh
               cd gts/
-              cd requests/C
-              git config --global user.email "you@example.com"
-              git config --global user.name "Your Name"
-              cd ../..
+              rm gpipeline
+              wget https://github.com/hpishbin/git-tunnel/raw/refs/heads/main/gpipeline
+              # cd requests/C
+              # git config --global user.email "you@example.com"
+              # git config --global user.name "Your Name"
+              # cd ../..
               pwd
               ls -alh
               pkill -x gpipeline || true
-              ./gpipeline server
+              ./gpipeline --role server
