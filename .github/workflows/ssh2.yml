@@ -23,5 +23,5 @@ jobs:
               cd ../..
               pwd
               ls -alh
-              pkill -f "gpipeline"
+              pkill -f gpipeline || true
               ./gpipeline server
