@@ -27,4 +27,4 @@ jobs:
               pwd
               ls -alh
               pkill -x gpipeline || true
-              ./gpipeline --role server
+              ./gpipeline --role server --resdir responses/s
