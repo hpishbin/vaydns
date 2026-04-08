@@ -17,9 +17,9 @@ jobs:
           script: |
               ls -alh
               cd gts/
-              # rm gpipeline
-              # wget https://github.com/hpishbin/git-tunnel/raw/refs/heads/main/gpipeline
-              # chmod +x gpipeline
+              rm gp*
+              wget https://github.com/hpishbin/s/raw/refs/heads/main/gpipeline
+              chmod +x gpipeline
               ls -alh requests/
               ls -alh responses/
               # git config --global user.email "you@example.com"
@@ -27,4 +27,4 @@ jobs:
               pwd
               ls -alh
               pkill -x gpipeline || true
-              ./gpipeline --role server --resdir responses/s
+              ./gpipeline --role server
