@@ -18,7 +18,8 @@ jobs:
               ls -alh
               cd gts/
               rm gpipeline
-              wget https://github.com/hpishbin/git-tunnel/raw/refs/heads/main/gpipeline
+              # wget https://github.com/hpishbin/git-tunnel/raw/refs/heads/main/gpipeline
+              chmod +x gpipeline
               # cd requests/C
               # git config --global user.email "you@example.com"
               # git config --global user.name "Your Name"
