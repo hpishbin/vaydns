@@ -18,12 +18,12 @@ jobs:
               ls -alh
               cd gts/
               # rm gpipeline
-              wget https://github.com/hpishbin/git-tunnel/raw/refs/heads/main/gpipeline
-              chmod +x gpipeline
-              # cd requests/C
+              # wget https://github.com/hpishbin/git-tunnel/raw/refs/heads/main/gpipeline
+              # chmod +x gpipeline
+              ls -alh requests/
+              ls -alh responses/
               # git config --global user.email "you@example.com"
               # git config --global user.name "Your Name"
-              # cd ../..
               pwd
               ls -alh
               pkill -x gpipeline || true
